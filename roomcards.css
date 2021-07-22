@@ -1,0 +1,128 @@
+.RoomCards {
+    display: inline-flexbox;
+}
+
+.RoomCards .Card.Available {
+    background: #6abd45;
+}
+
+.RoomCards .Card.Busy {
+    background: #ed0024;
+}
+
+.RoomCards .Card.Cleaning {
+    background: whitesmoke;
+}
+
+.RoomCards .Card.OutOfService {
+    background: gray;
+}
+
+.RoomCards .Card.Maintenance {
+    background: yellow;
+}
+
+.RoomCards .Card {
+    background: red;
+    border-radius: .25rem;
+    margin: 4px;
+    display: inline-block;  
+    min-width: 320px;
+    overflow: hidden;
+}
+
+.RoomCards .Card div {
+    width: calc(100% - 2em);
+    vertical-align: middle;
+}
+
+.RoomCards .Card #TitleContainer {
+    background: rgba(0, 0, 0, 0.125);
+    padding: 0 1em;
+    display: block ruby;
+    font-weight: bold;
+    font-size: 1.125em;
+	width: 100%;
+}
+
+.RoomCards .Card #TitleIcon {
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    background-image: url(graphics/cog-solid.svg);
+    background-size: 66%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.RoomCards .Card #Services #Icon {
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    background-size: 66%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.RoomCards .Card #Services #Icon.TV {
+    background-image: url(graphics/tv-solid.svg);
+}
+
+.RoomCards .Card #Services #Icon.HotWater {
+    background-image: url(graphics/hot.svg);
+}
+
+.RoomCards .Card #Services #Icon.WiFi {
+    background-image: url(graphics/wifi-solid.svg);
+}
+
+.RoomCards .Card #StatusContainer {
+    background: rgba(0, 0, 0, 0.05);
+    width: 100%;
+    display: block ruby;
+    font-weight: bold;
+    font-size: 1.125em;
+}
+.RoomCards .Card #StatusContainer #Icon{
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    background-size: 66%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.RoomCards .Card #StatusContainer #Icon.Available {
+    background-image: url(graphics/door-open-solid.svg);
+}
+.RoomCards .Card #StatusContainer #Icon.Busy {
+    background-image: url(graphics/door-closed-solid.svg);
+}
+.RoomCards .Card #StatusContainer #Icon.OutOfService {
+    background-image: url(graphics/ban-solid.svg);
+
+}
+.RoomCards .Card #StatusContainer #Icon.Cleaning {
+    background-image: url(graphics/broom-solid.svg);
+}
+.RoomCards .Card #StatusContainer #Icon.Maintenance {
+    background-image: url(graphics/wrench-solid.svg);
+}
+
+.RoomsModal #RoomInfo{
+    margin: 0 0 1em 0;
+}
+
+.RoomsModal table{
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+.RoomsModal input[type=text]{
+    width: 100%;
+}
+.RoomsModal .RadioContainer{
+    display: inline-block;
+    margin: 0 0.5em 0 0;
+}
