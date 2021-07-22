@@ -1,7 +1,8 @@
 <?php
 $pagelvl = "mix";
 include("assets/controller/dbdriver.php");
-$sql = "SELECT habitacion, room_statusID, descripcion FROM habitaciones";
+$sql = "SELECT `habitacion`, `descripcion`, `room_statusID`, categorias.room_desc   FROM `habitaciones`
+        JOIN `categorias` ON habitaciones.id_categoria = categorias.id";
 $result = mysqli_query($db, $sql);
 ?>
 <!DOCTYPE html>
@@ -11,7 +12,6 @@ $result = mysqli_query($db, $sql);
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sistema de Gestion Hotelera</title>
-
   <!-- Google Font: Source Sans Pro -->
   <link rel="shortcut icon" href="favicon.ico" />
   <link rel="stylesheet" href="fonts/SourceSansPro-Fonts.css">
@@ -30,14 +30,12 @@ $result = mysqli_query($db, $sql);
 
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">
-
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
       <ul class="navbar-nav ml-auto">
       </ul>
     </nav>
     <!-- /.navbar -->
-
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
@@ -45,7 +43,6 @@ $result = mysqli_query($db, $sql);
         <img src="img/minovate-logo-color.png" style="opacity: .8">
         <span class="brand-text font-weight-light">Gestión Hoteles</span>
       </a>
-
       <!-- Sidebar -->
       <div class="sidebar">
         <!-- Sidebar user panel (optional)
@@ -57,7 +54,6 @@ $result = mysqli_query($db, $sql);
           <a href="#" class="d-block">Alexander Pierce</a>
         </div>
       </div>-->
-
         <!-- SidebarSearch Form
       <div class="form-inline">
         <div class="input-group" data-widget="sidebar-search">
@@ -69,14 +65,12 @@ $result = mysqli_query($db, $sql);
           </div>
         </div>
       </div>-->
-
         <!-- Sidebar Menu -->
         <?php include("assets/controller/session.php"); ?>
         <!-- /.sidebar-menu -->
       </div>
       <!-- /.sidebar -->
     </aside>
-
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
@@ -96,12 +90,10 @@ $result = mysqli_query($db, $sql);
         </div><!-- /.container-fluid -->
       </div>
       <!-- /.content-header -->
-
       <!-- Main content -->
       <div class="content">
         <div class="container-fluid">
           <div class="row">
-
             <div class="RoomCards"> </div>
             <div class="RoomsModal" title="Formulario de Habitaciones">
               <table id="RoomInfo">
@@ -129,15 +121,12 @@ $result = mysqli_query($db, $sql);
                   <tr>
                     <h5><label>Datos del Cliente</label></h5>
                   </tr>
-
                   <tr>
                     <td><i class="fa fa-user"></i> <label for="ClienteNombre">Nombre Completo:</label>
                       <p><input type="text" name="ClienteNombre" id="ClienteNombre" placeholder="Maria Guadalupe Hernandez Garcia"></p>
                     </td>
                   </tr>
-
                   <tr>
-
                   </tr>
                   <tr>
                     <td><i class="fa fa-globe"></i> <label for="ClienteNacionalidad">Nacionalidad:</label>
@@ -159,7 +148,6 @@ $result = mysqli_query($db, $sql);
                           <label for="Pasaporte">Pasaporte</label>
                         </div>
                       </div>
-
                     </td>
                   </tr>
                 </tbody>
@@ -167,18 +155,14 @@ $result = mysqli_query($db, $sql);
               <a href="#" class="btn btn-primary">Aceptar</a>
               <a href="#" class="btn btn-primary btn-cancel">Cancelar</a>
             </div>
-
           </div>
           <br>
           <!--<div class="row">-->
-
-
         </div>
       </div>
       <!-- /.content original -->
     </div>
     <!-- /.content-wrapper -->
-
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
       <!-- Control sidebar content goes here -->
@@ -189,12 +173,9 @@ $result = mysqli_query($db, $sql);
     </aside>
     <!-- /.control-sidebar -->
     <?php include("template/footer.php"); ?>
-
   </div>
   <!-- ./wrapper -->
-
   <!-- REQUIRED SCRIPTS -->
-
   <!-- jQuery -->
   <script src="plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
@@ -204,7 +185,6 @@ $result = mysqli_query($db, $sql);
   <!--Scripts Dinamicos-->
   <link href="css/roomcards.css" rel="stylesheet" property='stylesheet'>
   <script src="assets/js/transformform.js"></script>
-
   <!--End Scripts Dinamicos-->
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
