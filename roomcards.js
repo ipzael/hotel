@@ -18,29 +18,23 @@ $(document).ready(function () {
     for (i = 0; i < Rooms.length; ++i) {
         //console.log(Rooms[i])
         var CardsContainer = $('.RoomCards');
-
         var Card = $('<div/>', {
             class: 'Card',
         }).appendTo(CardsContainer);
-
         var CardTitleContainer = $('<div/>', {
             id: 'TitleContainer',
         }).appendTo(Card);
-
         var TitleText = $('<div/>', {
             id: 'TitleText',
             text: Rooms[i].Number
         }).appendTo(CardTitleContainer);
-
         var TitleIcon = $('<div/>', {
             id: 'TitleIcon',
             'data-content': Rooms[i].Number
         }).appendTo(CardTitleContainer);
-
         var ServicesIcons = $('<div/>', {
             id: 'Services',
         }).appendTo(Card);
-
         if (Rooms[i].TV == true) {
             var TVIcon = $('<div/>', {
                 class: 'TV',
@@ -59,11 +53,9 @@ $(document).ready(function () {
                 id: 'Icon',
             }).appendTo(ServicesIcons);
         }
-
         var StatusContainer = $('<div/>', {
             id: 'StatusContainer',
         }).appendTo(Card);
-
         var StatusIcon = $('<div/>', {
             id: 'Icon',
         }).appendTo(StatusContainer);
@@ -71,7 +63,6 @@ $(document).ready(function () {
             id: 'Title',
             text: Rooms[i].StatusString,
         }).appendTo(StatusContainer);
-
         if (Rooms[i].Status == 1) {
             $(Card).addClass("Available");
             $(StatusIcon).addClass("Available");
@@ -88,7 +79,6 @@ $(document).ready(function () {
             $(Card).addClass("Maintenance");
             $(StatusIcon).addClass("Maintenance");
         }
-
         var ModalDialog = $('.RoomsModal');
         $(ModalDialog).dialog({
             autoOpen: false,
@@ -103,25 +93,19 @@ $(document).ready(function () {
                 duration: 250
             }
         });
-
         $(TitleIcon).on("click", function () {
             Rooms.forEach(element => {
                 if (element.Number == $(this).data("content")) {
                     $('.RoomsModal #RoomNumber').text(element.Number)
-                    $('.RoomsModal #RoomType').text("Undefined")
+                    $('.RoomsModal #RoomType').text(element.Type)
                     $('.RoomsModal #RoomServices').text(element.ServicesString)
                     $('.RoomsModal #RoomStatus').text(element.StatusString)
-                } else {
-                }
+                } else {}
             });
             $(ModalDialog).dialog("open");
         });
         $(".btn-cancel").on("click", function () {
             $(ModalDialog).dialog("close");
         });
-
     }
-
-
-
 });
